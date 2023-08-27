@@ -4,9 +4,7 @@ const getPlayers = async () => {
     const res = await fetch(`${process.env.FANTASY_BASE_URL}/api/v3/players?x-lang=es'`);
 
     if (res.ok) {
-        const data = await res.json();
-
-        return data
+        return await res.json();
     }
 
     return null;
@@ -16,9 +14,7 @@ const getPlayerDetail = async (id) => {
     const res = await fetch(`${process.env.FANTASY_BASE_URL}/api/v3/player/${id}`);
 
     if (res.ok) {
-        const data = await res.json();
-        
-        return data;
+        return await res.json();
     }
 
     return null;
